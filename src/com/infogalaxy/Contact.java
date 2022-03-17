@@ -11,15 +11,19 @@ public class Contact {
     private String zip;
 
     public void setFirstName(String firstName){
+
         this.firstName = firstName;
     }
-    public void setLastName(String lastName){
+    public void setLastName(String lastName)
+    {
         this.lastName = lastName;
     }
     public void setAddress(String address){
+
         this.address = address;
     }
     public void setCity(String city){
+
         this.city = city;
     }
     public void setState(String state){
@@ -65,6 +69,7 @@ public class Contact {
                 ", lastName='" + lastName + '\'' +
                 ", address='" + address + '\'' +
                 ", city='" + city + '\'' +
+                "'State=" + state + '\'' +
                 ", mobno='" + mobno + '\'' +
                 ", email='" + email + '\'' +
                 ", zip='" + zip + '\'' +
