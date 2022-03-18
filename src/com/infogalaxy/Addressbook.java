@@ -28,8 +28,18 @@ public class Addressbook {
     }
 
     public static void main(String[] args) {
-        Addressbook addressbook =new Addressbook();
-        addressbook.addContact();
-        addressbook.dispayContact();
+        int list_of_contact;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter list Of Contact : ");
+        list_of_contact = sc.nextInt();
+        Addressbook[] addressbook = new Addressbook[list_of_contact];
+        // UC-2 Multiple Contacts Using Array And For Loop
+        for(int i = 0; i < list_of_contact; i++) {
+            addressbook[i] = new Addressbook();
+            addressbook[i].addContact();
+        }
+        for (int i = 0; i < list_of_contact; i++){
+            addressbook[i].dispayContact();
+        }
     }
 }
