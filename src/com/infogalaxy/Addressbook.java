@@ -1,11 +1,13 @@
 package com.infogalaxy;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Addressbook {
     Scanner sc = new Scanner(System.in);
-    Contact contact = new Contact();
+    ArrayList<Contact> contactlist = new ArrayList<>();
     public void addContact(){
+        Contact contact = new Contact();
         System.out.println("Enter The First Name : ");
         contact.setFirstName(sc.next());
         System.out.println("Enter The Last Name : ");
@@ -22,24 +24,15 @@ public class Addressbook {
         contact.setEmail(sc.next());
         System.out.println("Enter The Zip Code : ");
         contact.setZip(sc.next());
+        contactlist.add(contact);
     }
     public  void dispayContact(){
-        System.out.println(contact.toString());
+        System.out.println(contactlist.toString());
     }
-
+ //UC-3-ContactRefactorInAddressbook
     public static void main(String[] args) {
-        int list_of_contact;
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter list Of Contact : ");
-        list_of_contact = sc.nextInt();
-        Addressbook[] addressbook = new Addressbook[list_of_contact];
-        // UC-2 Multiple Contacts Using Array And For Loop
-        for(int i = 0; i < list_of_contact; i++) {
-            addressbook[i] = new Addressbook();
-            addressbook[i].addContact();
-        }
-        for (int i = 0; i < list_of_contact; i++){
-            addressbook[i].dispayContact();
-        }
+            Addressbook addressbook = new Addressbook();
+            addressbook.addContact();
+            addressbook.dispayContact();
     }
 }
