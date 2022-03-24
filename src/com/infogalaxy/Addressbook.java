@@ -27,12 +27,32 @@ public class Addressbook {
         contactlist.add(contact);
     }
     public  void dispayContact(){
-        System.out.println(contactlist.toString());
+        for (int i = 0;i <contactlist.size();i++){
+            Contact contact =contactlist.get(i);
+            System.out.println(contact.toString());
+
+        }
     }
  //UC-3-ContactRefactorInAddressbook
     public static void main(String[] args) {
+            Scanner sc = new Scanner(System.in);
             Addressbook addressbook = new Addressbook();
-            addressbook.addContact();
-            addressbook.dispayContact();
+            int choice;
+        //UC-4-Multiple Contact using Do While Loop
+        do {
+                System.out.println("****Contact Inventory Management****");
+                System.out.println("\n1.Add Contact\n2.Display Contact\n3.Exit");
+                System.out.println("Enter Your Choice : ");
+                choice = sc.nextInt();
+                switch (choice){
+                    case 1:
+                        addressbook.addContact();
+                        break;
+                    case 2:
+                        addressbook.dispayContact();
+                        break;
+                }
+            }while (choice !=3);
+
     }
 }
